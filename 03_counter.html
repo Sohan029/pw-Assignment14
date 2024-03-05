@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .display{
+            width: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        #number{
+            font-size: x-large;
+            font-weight: bold;
+        }
+        button{
+            font-weight: bolder;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <h1>Counter</h1>
+    <div class="display">
+        <button id="plus" onclick="add()">+</button>
+        <div id="number">0</div>
+        <button id="minus" onclick="minus()">-</button>
+    </div>
+
+    <script>
+        const number = document.getElementById('number')
+
+        let count = number.innerHTML
+        console.log(count);
+
+        function add(){
+            count++;
+            number.innerHTML=count
+        }
+
+        function minus(){
+            if(count === 0){
+                alert('counter cannot go less than 0')
+            }
+            else{
+                count--;
+                number.innerHTML=count
+            }
+        }
+
+
+    </script>
+</body>
+</html>

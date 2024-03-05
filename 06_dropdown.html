@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+    <script>
+        const options = ['JavaScript','Java','Python','c++']
+
+        const box = document.getElementById('box')
+
+        const label = document.createElement('label')
+        const select = document.createElement('select')
+
+        label.innerHTML = 'Which is favorite Programming Language :'
+        box.appendChild(label)
+
+        options.map(function(key){
+            const option = document.createElement('option')
+            option.innerHTML = key
+            option.value = key
+            select.appendChild(option)
+            label.appendChild(select)
+        })
+
+    </script>
+</body>
+</html>

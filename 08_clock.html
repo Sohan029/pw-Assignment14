@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #box{
+            height: 50px;
+            width: 200px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: 2px solid whitesmoke;
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: aliceblue;
+            font-size: xx-large;
+
+        }
+        #parts{
+            width: 65px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="parts" id="hours"></div><span>:</span>
+        <div class="parts" id="minutes"></div><span>:</span>
+        <div class="parts" id="seconds"></div>
+    </div>
+    
+    <script>
+        let hours = document.getElementById('hours')
+        let minutes = document.getElementById('minutes')
+        let seconds = document.getElementById('seconds')
+        
+        setInterval(function(){
+            let time = new Date()
+            hours.innerHTML = time.getHours().toString().padStart(2,'0')
+            minutes.innerHTML = time.getMinutes().toString().padStart(2,'0')
+            seconds.innerHTML = time.getSeconds().toString().padStart(2,'0')
+            let bgc = `#${hours.innerHTML}${minutes.innerHTML}${seconds.innerHTML}`
+            document.body.style.backgroundColor = bgc
+
+        },1000)
+    </script>
+</body>
+</html>

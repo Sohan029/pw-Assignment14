@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form{
+            height: 100px;
+            width: fit-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: start;
+            padding: 50px;
+            gap: 20px;
+        }
+        #signUp{
+            width: fit-content;
+        }
+        #heading{
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: x-large;
+            font-weight: bolder;
+        }
+        form div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="signUp">
+        <div id="heading">Sign Up Form</div>
+        <form action="/">
+            <div>
+                <label for="name">Name :</label>
+                <input id="name" type="text" name="name" placeholder="( Minimum 3 characters)"  required>
+            </div>
+
+            <div>
+                <label for="name">Email :</label>
+                <input type="email" placeholder="Enter Your Email" required>
+            </div>
+            
+            <div>
+                <label for="password">Password :</label>
+                <input id="password" type="password" placeholder="( Minimum 3 characters)" required>
+            </div>
+            <button type="submit">Submit</button>           
+        </form>
+    </div>
+    <script>
+        const name = document.getElementById('name')
+        const password = document.getElementById('password')
+        const form = document.querySelector('form')
+
+
+        form.addEventListener('submit',function (e){
+            e.preventDefault()
+            validate()
+
+        })
+
+        function validate(){
+            if(name.value.length < 3 && password.value.length < 8){
+                alert("Form Validation Failed !!")
+            }
+            else{
+                alert("Form Validation Successful !!")
+            }
+        }
+
+
+    </script>
+</body>
+</html>

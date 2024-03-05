@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">Your Image is Visible</h1>
+    <button id="toggle-switch" style="margin: 50px;">Toggle</button>
+    <div id="image"><img src="assets/pwFull.png" alt="Hidden" id="image"></div>
+
+    <script>
+        let h1 = document.getElementById('heading')
+        let toggleswitch = document.getElementById('toggle-switch')
+        let image = document.getElementById('image')
+        
+        console.log(image.style.display);
+
+
+        toggleswitch.addEventListener('click',function (){
+            let value = image.style.display
+            
+            if( value === 'block'){
+                image.style.display = 'none'
+                h1.innerHTML = 'Your Image is Hidden'
+            }
+            else{
+                image.style.display = 'block'
+                h1.innerHTML = 'Your Image is Visible'
+            }
+        })
+
+    </script>
+</body>
+</html>

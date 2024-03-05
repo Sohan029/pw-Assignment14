@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="searchbar" type="text" placeholder="Search for items">
+    <h2>Results :</h2>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Tailwind CSS</li>
+        <li>GitHub</li>
+        <li>JavaScript</li>
+        <li>Java</li>
+    </ul>
+
+    <script>
+        const searchbar = document.getElementById('searchbar')
+        const ul = document.querySelector('ul')
+        const li = document.querySelectorAll('li')
+
+        searchbar.addEventListener('input',function (){
+            li.forEach(function(key){
+                let sample = key.innerHTML.toLocaleLowerCase()
+                let inputValue =searchbar.value.toLocaleLowerCase()
+                if(sample.includes(inputValue)){
+                    key.style.display = 'block'
+                }
+                else{
+                    key.style.display = 'none'
+                }
+            })
+        })
+    </script>
+</body>
+</html>
